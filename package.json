@@ -48,7 +48,7 @@
     "chokidar": "1.4.3",
     "minimist": "1.2.0",
     "tsdi": "0.9.4",
-    "typescript": "1.8.2"
+    "typescript": "1.8.7"
   },
   "publishConfig": {
     "tag": "next"
