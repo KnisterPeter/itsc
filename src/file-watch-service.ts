@@ -7,7 +7,7 @@ import { FileUpdateHandler } from './file-update-handler';
 type FileMap = { [name: string]: boolean };
 type WatcherMap = { [name: string]: number };
 
-@Component()
+@Component('FileWatchService')
 export class FileWatchService {
 
   @Inject()
