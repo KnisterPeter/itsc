@@ -47,7 +47,7 @@
   "dependencies": {
     "chokidar": "1.4.3",
     "minimist": "1.2.0",
-    "tsdi": "0.9.4",
+    "tsdi": "0.9.5",
     "typescript": "1.8.7"
   },
   "publishConfig": {
