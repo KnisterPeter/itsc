@@ -3,7 +3,7 @@ import { Component, Inject } from 'tsdi';
 import { DependencyManager } from './dependency-manager';
 import { Emitter } from './emitter';
 
-@Component()
+@Component('FileUpdateHandler')
 export class FileUpdateHandler {
 
   @Inject()
@@ -18,9 +18,8 @@ export class FileUpdateHandler {
     }
     this.dependencyManager.files[fileName].version++;
     this.emitter.emitFile(fileName);
-    // TODO: Just check files (not emit)
     this.dependencyManager.getDependents(fileName)
-      .forEach(dependent => this.emitter.emitFile(dependent));
+      .forEach(dependent => this.emitter.checkFile(dependent));
   }
 
 }
