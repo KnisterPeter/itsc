@@ -10,7 +10,7 @@ type WatcherMap = { [name: string]: number };
 @Component('FileWatchService')
 export class FileWatchService {
 
-  @Inject()
+  @Inject('FSWatcher')
   private watcher: FSWatcher;
 
   @Inject('FileUpdateHandler')
@@ -40,10 +40,11 @@ export class FileWatchService {
   }
 
   private onUnlink(fileName: string): void {
-    delete this.files[fileName];
-    const dir = path.dirname(fileName);
-    this.watchers[dir]--;
-    this.unwatchDirectory(dir);
+    if (this.files[fileName]) {
+      delete this.files[fileName];
+      const dir = path.dirname(fileName);
+      this.watchers[dir]--;
+    }
   }
 
   public watchFile(fileName: string): void {

@@ -12,7 +12,7 @@ import { Emitter } from './emitter';
 @Component()
 class ComponentFactory {
 
-  @Factory()
+  @Factory({name: 'FSWatcher'})
   public createFileWatcher(): FSWatcher {
     return new FSWatcher();
   }
